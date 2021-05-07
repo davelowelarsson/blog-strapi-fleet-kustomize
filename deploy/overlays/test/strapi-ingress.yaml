@@ -1,7 +1,9 @@
-apiVersion: networking.k8s.io/v1
+apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   name: strapi-lb
+  app: strapi
+  tier: backend
 spec:
   rules:
     - host: strapi.test.ur.se

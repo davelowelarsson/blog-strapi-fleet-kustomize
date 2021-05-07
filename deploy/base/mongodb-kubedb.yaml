@@ -1,8 +1,6 @@
 apiVersion: kubedb.com/v1alpha2
 kind: MongoDB
 metadata:
-  labels:
-    app: strapi
   name: mongo
 spec:
   version: "4.0.5-v3"
