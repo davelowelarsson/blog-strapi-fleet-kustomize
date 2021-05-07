@@ -26,6 +26,12 @@ diff:
     - apiVersion: v1
       kind: Service
       name: mongo-pods
+      operations:
+        - op: remove
+          path: /subjects/0
     - apiVersion: v1
       kind: Service
       name: mongo
+      operations:
+        - op: remove
+          path: /subjects/0
