@@ -33,3 +33,25 @@ spec:
     app.kubernetes.io/instance: mongo
     app.kubernetes.io/managed-by: kubedb.com
     app.kubernetes.io/name: mongodbs.kubedb.com
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo
+  ownerReferences:
+  - apiVersion: kubedb.com/v1alpha2
+    kind: MongoDB
+    name: mongo
+spec:
+  ports:
+  - name: primary
+    port: 27017
+    protocol: TCP
+    targetPort: db
+  selector:
+    app.kubernetes.io/instance: mongo
+    app.kubernetes.io/managed-by: kubedb.com
+    app.kubernetes.io/name: mongodbs.kubedb.com
+    kubedb.com/role: primary
