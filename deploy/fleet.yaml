@@ -27,11 +27,9 @@ diff:
       kind: Service
       name: mongo-pods
       operations:
-        - op: remove
-          path: /
+      - {"op": "remove", "path":"/spec/"}
     - apiVersion: v1
       kind: Service
       name: mongo
       operations:
-        - op: remove
-          path: /
+      - {"op": "remove", "path":"/spec/"}
