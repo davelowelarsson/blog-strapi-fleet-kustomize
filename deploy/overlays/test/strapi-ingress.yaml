@@ -5,3 +5,8 @@ metadata:
 spec:
   rules:
     - host: strapi.test.ur.se
+      http:
+        paths:
+          - backend:
+              serviceName: strapi
+              servicePort: 1337
