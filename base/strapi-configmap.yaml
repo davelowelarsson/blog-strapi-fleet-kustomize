@@ -4,6 +4,6 @@ metadata:
   name: strapi-config-map
 data:
   DATABASE_CLIENT: 'mongo'
-  DATABASE_HOST: 'strapi'
+  DATABASE_HOST: 'mongo'
   DATABASE_NAME: 'strapi'
   DATABASE_PORT: '5432'
