@@ -16,3 +16,20 @@ spec:
       requests:
         storage: 2Gi
   terminationPolicy: WipeOut
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo-pods
+spec:
+  ports:
+  - name: db
+    port: 27017
+    protocol: TCP
+    targetPort: db
+  selector:
+    app.kubernetes.io/instance: mongo
+    app.kubernetes.io/managed-by: kubedb.com
+    app.kubernetes.io/name: mongodbs.kubedb.com

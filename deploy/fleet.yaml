@@ -20,16 +20,3 @@ targetCustomizations:
       env: production
   kustomize:
     dir: overlays/production
-
-diff:
-  comparePatches:
-    - apiVersion: v1
-      kind: Service
-      name: mongo-pods
-      operations:
-      - {"op": "remove", "path":"/spec/"}
-    - apiVersion: v1
-      kind: Service
-      name: mongo
-      operations:
-      - {"op": "remove", "path":"/spec/"}
