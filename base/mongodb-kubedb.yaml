@@ -17,9 +17,6 @@ spec:
     resources:
       requests:
         storage: 2Gi
-  configSource:
-    configMap:
-      name: mongodb-config
   terminationPolicy: WipeOut
   resources:
     requests:
