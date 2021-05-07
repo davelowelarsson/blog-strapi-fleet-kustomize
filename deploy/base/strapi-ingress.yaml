@@ -10,5 +10,5 @@ spec:
           - backend:
               service:
                 name: strapi
-              service:
-                port: 1337
+                port:
+                  number: 1337
