@@ -1,0 +1,39 @@
+apiVersion: kubedb.com/v1alpha2
+kind: MongoDB
+metadata:
+  labels:
+    app: strapi
+  name: mongo
+spec:
+  version: "4.0.5-v3"
+  replicas: 3
+  replicaSet:
+    name: mongo-rs
+  storageType: Durable
+  storage:
+    storageClassName: "nfs-client"
+    accessModes:
+      - ReadWriteOnce
+    resources:
+      requests:
+        storage: 2Gi
+  init:
+    scriptSource:
+      configMap:
+        name: mongo-init-config-map
+  configSource:
+    configMap:
+      name: mongodb-config
+  terminationPolicy: WipeOut
+  monitor:
+    agent: prometheus.io/coreos-operator
+    prometheus:
+      namespace: cattle-prometheus # Use prometheus in system project
+      interval: 10s
+  resources:
+    requests:
+      memory: "1500Mi"
+      cpu: "250m"
+    limits:
+      memory: "3000Mi"
+      cpu: "500m"
