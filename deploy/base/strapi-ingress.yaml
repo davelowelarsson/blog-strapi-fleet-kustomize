@@ -8,5 +8,7 @@ spec:
       http:
         paths:
           - backend:
-              serviceName: strapi
-              servicePort: 1337
+              service:
+                name: strapi
+              service:
+                port: 1337
