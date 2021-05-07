@@ -20,3 +20,12 @@ targetCustomizations:
       env: production
   kustomize:
     dir: overlays/production
+
+diff:
+  comparePatches:
+    - apiVersion: v1
+      kind: Service
+      name: mongo-pods
+    - apiVersion: v1
+      kind: Service
+      name: mongo
