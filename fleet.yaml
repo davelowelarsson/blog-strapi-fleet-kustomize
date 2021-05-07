@@ -1,4 +1,4 @@
-namespace: fleet-mc-kustomize-example
+namespace: fleet-strapi
 targetCustomizations:
 - name: test
   clusterSelector:

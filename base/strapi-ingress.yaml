@@ -1,0 +1,12 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: strapi-lb
+spec:
+  rules:
+    - host: strapi.stage.ur.se
+      http:
+        paths:
+          - backend:
+              serviceName: strapi
+              servicePort: 1337
