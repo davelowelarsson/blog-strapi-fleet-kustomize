@@ -20,3 +20,19 @@ targetCustomizations:
       env: production
   kustomize:
     dir: overlays/production
+
+diff:
+  comparePatches:
+  - apiVersion: v1
+    kind: Service
+    name: mongo
+    operations:
+    - {"op":"remove", "path":"metadata/annotations/objectset.rio.cattle.io/id"}
+    - {"op":"remove", "path":"/spec/selector/app"}
+    - {"op":"remove", "path":"/spec/selector/tier"}
+  - apiVersion: v1
+    kind: Service
+    name: mongo-pods
+    operations:
+    - {"op":"remove", "path":"/spec/selector/app"}
+    - {"op":"remove", "path":"/spec/selector/tier"}
