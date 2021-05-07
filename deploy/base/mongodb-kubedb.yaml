@@ -46,10 +46,6 @@ metadata:
   labels:
     app: strapi
     tier: backend
-  ownerReferences:
-  - apiVersion: kubedb.com/v1alpha2
-    kind: MongoDB
-    name: mongo
 spec:
   ports:
   - name: primary
