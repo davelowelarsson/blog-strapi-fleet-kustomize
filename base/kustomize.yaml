@@ -1,2 +1,6 @@
 resources:
-- strapi.yaml
+  - mongodb-config.yaml
+  - mongodb-kubedb.yaml
+  - strapi-configmap.yaml
+  - strapi-deployment.yaml
+  - strapi-service.yaml
